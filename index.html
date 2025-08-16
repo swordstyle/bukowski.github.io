@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Bukowski - Writer, Poet, Legend</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Special Elite', cursive;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #f5f5f0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 44, 44, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #f5f5f0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d4a574;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c2c2c;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c2c2c;
+            border-bottom: 3px solid #d4a574;
+            padding-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c2c2c 0%, #444 100%);
+            color: #f5f5f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin: 2rem 0;
+            max-width: 600px;
+        }
+
+        /* Content Grids */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .content-block {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #d4a574;
+        }
+
+        /* Writings */
+        .poem-block {
+            background: #fafafa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid #2c2c2c;
+            font-family: 'Special Elite', cursive;
+            white-space: pre-line;
+        }
+
+        /* Media Gallery */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .photo-placeholder, .video-placeholder {
+            background: #ddd;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-placeholder:hover, .video-placeholder:hover {
+            transform: scale(1.05);
+        }
+
+        /* Shop Section */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            background: #ddd;
+            height: 200px;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .buy-button {
+            background: #d4a574;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Special Elite', cursive;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background: #b8935f;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c2c2c;
+            color: #f5f5f0;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-quote {
+                font-size: 1.4rem;
+            }
+
+            section {
+                padding: 4rem 1rem 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#writings">Writings</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>CHARLES BUKOWSKI</h1>
+        <div class="hero-quote">
+            "Find what you love and let it kill you."
+        </div>
+        <p>Writer • Poet • Legend (1920-1994)</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Bukowski</h2>
+        <p>Charles Bukowski was a German-American poet, novelist, and short story writer. His writing was influenced by the social, cultural, and economic ambience of his home city of Los Angeles.</p>
+        
+        <div class="content-grid">
+            <div class="content-block">
+                <h3>Early Life</h3>
+                <p>Born in Andernach, Germany in 1920, Bukowski moved to Los Angeles at age 3. His early experiences with poverty and his father's abuse would later influence his raw, honest writing style.</p>
+            </div>
+            <div class="content-block">
+                <h3>Writing Career</h3>
+                <p>Starting with poetry in small literary magazines, Bukowski went on to write over 40 books of poetry and prose, including novels like "Post Office" and "Ham on Rye".</p>
+            </div>
+            <div class="content-block">
+                <h3>Legacy</h3>
+                <p>Known for his uncompromising voice and underground sensibility, Bukowski remains one of the most widely read American writers, translated into dozens of languages.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writings Section -->
+    <section id="writings">
+        <h2>Writings</h2>
+        
+        <div class="content-grid">
+            <div class="content-block">
+                <h3>Poetry</h3>
+                <div class="poem-block">
+<!-- TEMPLATE: Add poems here -->
+there is a loneliness in this world so great
+that you can see it in the slow movement of
+the hands of a clock
+
+people so tired
+mutilated
+either by love or no love.
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Prose & Quotes</h3>
+                <div class="poem-block">
+<!-- TEMPLATE: Add prose excerpts here -->
+"The problem with the world is that the intelligent people are full of doubts, while the stupid ones are full of confidence."
+
+"Sometimes you climb out of bed in the morning and you think, I'm not going to make it, but you laugh inside — remembering all the times you've felt that way."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section id="photos">
+        <h2>Photos</h2>
+        
+        <div class="media-grid">
+            <!-- TEMPLATE: Replace these with actual photos -->
+            <div class="photo-placeholder">
+                Young Bukowski Photo
+                <!-- Replace with: <img src="photo1.jpg" alt="Young Charles Bukowski" style="width:100%; height:100%; object-fit:cover; border-radius:8px;"> -->
+            </div>
+            <div class="photo-placeholder">
+                Writing at Desk Photo
+                <!-- Replace with: <img src="photo2.jpg" alt="Bukowski writing" style="width:100%; height:100%; object-fit:cover; border-radius:8px;"> -->
+            </div>
+            <div class="photo-placeholder">
+                Late Career Photo
+                <!-- Replace with: <img src="photo3.jpg" alt="Charles Bukowski later years" style="width:100%; height:100%; object-fit:cover; border-radius:8px;"> -->
+            </div>
+            <div class="photo-placeholder">
+                Book Cover Collection
+                <!-- Replace with: <img src="books.jpg" alt="Bukowski book covers" style="width:100%; height:100%; object-fit:cover; border-radius:8px;"> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+        <h2>Videos</h2>
+        
+        <div class="media-grid">
+            <!-- TEMPLATE: Replace with actual YouTube embeds -->
+            <div class="video-placeholder">
+                Poetry Reading Video
+                <!-- Replace with: 
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                -->
+            </div>
+            <div class="video-placeholder">
+                Interview Video
+                <!-- Replace with: 
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                -->
+            </div>
+            <div class="video-placeholder">
+                Documentary Clip
+                <!-- Replace with: 
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop">
+        <h2>Shop</h2>
+        
+        <div class="shop-grid">
+            <!-- TEMPLATE: Replace with actual products -->
+            <div class="product-card">
+                <div class="product-image">Book Cover Image</div>
+                <h3>Post Office</h3>
+                <p>Bukowski's first novel about his experiences working at the postal service.</p>
+                <button class="buy-button">Buy on Amazon</button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">Book Cover Image</div>
+                <h3>Ham on Rye</h3>
+                <p>Semi-autobiographical novel about Bukowski's childhood and young adulthood.</p>
+                <button class="buy-button">Buy on Amazon</button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">Product Image</div>
+                <h3>Vintage Poster</h3>
+                <p>Hand-crafted vintage-style Bukowski poetry poster.</p>
+                <button class="buy-button">View on Etsy</button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">Product Image</div>
+                <h3>Quote Print Set</h3>
+                <p>Collection of famous Bukowski quotes in typewriter font.</p>
+                <button class="buy-button">View on Etsy</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact & Newsletter</h2>
+        
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p>Stay updated with new content, rare photos, and exclusive materials.</p>
+            
+            <!-- TEMPLATE: Replace with actual form -->
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 2rem 0;">
+                <h3>Newsletter Signup</h3>
+                <input type="email" placeholder="Enter your email" style="width: 100%; padding: 1rem; margin: 1rem 0; border: 1px solid #ddd; border-radius: 4px; font-family: 'Special Elite', cursive;">
+                <button class="buy-button" style="width: 100%;">Subscribe</button>
+            </div>
+            
+            <p><strong>Email:</strong> info@charlesbukowski.org</p>
+            <p><strong>Social:</strong> Follow us for daily quotes and updates</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 CharlesBukowski.org - Celebrating the life and work of Charles Bukowski</p>
+        <p>All content used in accordance with fair use guidelines.</p>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80; // Account for fixed nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add click handlers for buy buttons (TEMPLATE - replace with actual links)
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Replace this with actual purchase links!');
+                // Example: window.open('https://amazon.com/product-link', '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
